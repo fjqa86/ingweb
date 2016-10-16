@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.ingweb.model.Brands" table="brands" catalog="ingweb" optimistic-lock="version">
+        <id name="idBrand" type="int">
+            <column name="id_brand" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="45" />
+        </property>
+        <set name="deviceses" table="devices" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="brand_id">
+                    <comment>Identificacion de la marca</comment>
+                </column>
+            </key>
+            <one-to-many class="com.ingweb.model.Devices" />
+        </set>
+    </class>
+</hibernate-mapping>

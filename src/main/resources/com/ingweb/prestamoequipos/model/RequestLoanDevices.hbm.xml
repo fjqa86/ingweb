@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.ingweb.model.RequestLoanDevices" table="request_loan_devices" catalog="ingweb" optimistic-lock="version">
+        <id name="idrequestLoanDevices" type="int">
+            <column name="idrequest_loan_devices" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="devices" class="com.ingweb.model.Devices" fetch="select">
+            <column name="device_id" not-null="true">
+                <comment>Identificador para el equipo o dispositivo a prestar</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="usersByUserApproved" class="com.ingweb.model.Users" fetch="select">
+            <column name="user_approved" length="250">
+                <comment>Usuario que aprueba o cancela el prestamo</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="usersByUserRequest" class="com.ingweb.model.Users" fetch="select">
+            <column name="user_request" length="250" not-null="true">
+                <comment>Usuario que pide el prestamo</comment>
+            </column>
+        </many-to-one>
+        <property name="dateLoan" type="timestamp">
+            <column name="date_loan" length="19" not-null="true">
+                <comment>fecha y hora de inicio de prestamo</comment>
+            </column>
+        </property>
+        <property name="dateClose" type="timestamp">
+            <column name="date_close" length="19" not-null="true">
+                <comment>fecha y hora de finalizacion del prestamo</comment>
+            </column>
+        </property>
+        <property name="dateRequest" type="timestamp">
+            <column name="date_request" length="19" not-null="true" />
+        </property>
+        <property name="approved" type="java.lang.Boolean">
+            <column name="approved">
+                <comment>Aprobacion de la solicitud por parte del administrador</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

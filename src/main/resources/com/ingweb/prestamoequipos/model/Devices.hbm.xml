@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.ingweb.model.Devices" table="devices" catalog="ingweb" optimistic-lock="version">
+        <id name="idDevice" type="java.lang.Integer">
+            <column name="id_device" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="brands" class="com.ingweb.model.Brands" fetch="select">
+            <column name="brand_id">
+                <comment>Identificacion de la marca</comment>
+            </column>
+        </many-to-one>
+        <property name="reference" type="string">
+            <column name="reference" length="100">
+                <comment>Refencia que identifica el equipo por su marca</comment>
+            </column>
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="100" not-null="true">
+                <comment>Nombre del equipo</comment>
+            </column>
+        </property>
+        <property name="provided" type="boolean">
+            <column name="provided" not-null="true">
+                <comment>Estado del equipo si esta prestado o ya fue devuelto</comment>
+            </column>
+        </property>
+        <property name="userProvided" type="string">
+            <column name="user_provided" length="250">
+                <comment>Usuario que tiene el equipo si su estado es prestado</comment>
+            </column>
+        </property>
+        <property name="disabled" type="boolean">
+            <column name="disabled" not-null="true">
+                <comment>Equipo o dispositivo borrado o disponible</comment>
+            </column>
+        </property>
+        <property name="brandName" type="string">
+            <column name="brand_name" length="45">
+                <comment>Nombre de la marca</comment>
+            </column>
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="500">
+                <comment>Descripcion de las caracteristicas del equipo o dispositivo</comment>
+            </column>
+        </property>
+        <set name="requestLoanDeviceses" table="request_loan_devices" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="device_id" not-null="true">
+                    <comment>Identificador para el equipo o dispositivo a prestar</comment>
+                </column>
+            </key>
+            <one-to-many class="com.ingweb.model.RequestLoanDevices" />
+        </set>
+        <set name="accetedLoanDeviceses" table="acceted_loan_devices" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="device_id" not-null="true">
+                    <comment>Identificador de equipo o dispositivo</comment>
+                </column>
+            </key>
+            <one-to-many class="com.ingweb.model.AccetedLoanDevices" />
+        </set>
+    </class>
+</hibernate-mapping>

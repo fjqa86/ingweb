@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.ingweb.model.Rols" table="rols" catalog="ingweb" optimistic-lock="version">
+        <id name="idRol" type="int">
+            <column name="id_rol" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="45" not-null="true" />
+        </property>
+        <property name="disabled" type="boolean">
+            <column name="disabled" not-null="true" />
+        </property>
+        <set name="userses" table="users" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="rol_id" not-null="true">
+                    <comment>Rol del usuario</comment>
+                </column>
+            </key>
+            <one-to-many class="com.ingweb.model.Users" />
+        </set>
+    </class>
+</hibernate-mapping>

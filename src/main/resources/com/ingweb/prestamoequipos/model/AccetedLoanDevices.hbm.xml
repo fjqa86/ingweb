@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.ingweb.model.AccetedLoanDevices" table="acceted_loan_devices" catalog="ingweb" optimistic-lock="version">
+        <id name="idacceptedLoanDevices" type="int">
+            <column name="idaccepted_loan_devices" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="devices" class="com.ingweb.model.Devices" fetch="select">
+            <column name="device_id" not-null="true">
+                <comment>Identificador de equipo o dispositivo</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="users" class="com.ingweb.model.Users" fetch="select">
+            <column name="user_loan" length="250" not-null="true">
+                <comment>usuario que realizo la solicitud de prestamo</comment>
+            </column>
+        </many-to-one>
+        <property name="dateLoan" type="timestamp">
+            <column name="date_loan" length="19" not-null="true">
+                <comment>fecha y hora de inicio prestamo</comment>
+            </column>
+        </property>
+        <property name="dateClose" type="timestamp">
+            <column name="date_close" length="19" not-null="true">
+                <comment>fecha y hora finalizacion de prestamo</comment>
+            </column>
+        </property>
+        <property name="dateReturn" type="timestamp">
+            <column name="date_return" length="19" not-null="true">
+                <comment>fecha y hora de devolucion de dispositivo por parte del usuario</comment>
+            </column>
+        </property>
+        <property name="dateDelivery" type="timestamp">
+            <column name="date_delivery" length="19" not-null="true">
+                <comment>fecha y hora de entrega de equipo o dispositivo por parte del administrador</comment>
+            </column>
+        </property>
+        <property name="requestLoanDeviceId" type="int">
+            <column name="request_loan_device_id" not-null="true">
+                <comment>identificacion de la solictud realizada antes de la asignacion</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

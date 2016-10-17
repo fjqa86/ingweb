@@ -9,8 +9,8 @@ public class AccetedLoanDevices  implements java.io.Serializable {
 
 
      private int idacceptedLoanDevices;
-     private Devices devices;
-     private Users users;
+     private Device device;
+     private User user;
      private Date dateLoan;
      private Date dateClose;
      private Date dateReturn;
@@ -20,10 +20,10 @@ public class AccetedLoanDevices  implements java.io.Serializable {
     public AccetedLoanDevices() {
     }
 
-    public AccetedLoanDevices(int idacceptedLoanDevices, Devices devices, Users users, Date dateLoan, Date dateClose, Date dateReturn, Date dateDelivery, int requestLoanDeviceId) {
+    public AccetedLoanDevices(int idacceptedLoanDevices, Device device, User user, Date dateLoan, Date dateClose, Date dateReturn, Date dateDelivery, int requestLoanDeviceId) {
        this.idacceptedLoanDevices = idacceptedLoanDevices;
-       this.devices = devices;
-       this.users = users;
+       this.device = device;
+       this.user = user;
        this.dateLoan = dateLoan;
        this.dateClose = dateClose;
        this.dateReturn = dateReturn;
@@ -38,19 +38,19 @@ public class AccetedLoanDevices  implements java.io.Serializable {
     public void setIdacceptedLoanDevices(int idacceptedLoanDevices) {
         this.idacceptedLoanDevices = idacceptedLoanDevices;
     }
-    public Devices getDevices() {
-        return this.devices;
+    public Device getDevices() {
+        return this.device;
     }
     
-    public void setDevices(Devices devices) {
-        this.devices = devices;
+    public void setDevices(Device device) {
+        this.device = device;
     }
-    public Users getUsers() {
-        return this.users;
+    public User getUsers() {
+        return this.user;
     }
     
-    public void setUsers(Users users) {
-        this.users = users;
+    public void setUsers(User user) {
+        this.user = user;
     }
     public Date getDateLoan() {
         return this.dateLoan;

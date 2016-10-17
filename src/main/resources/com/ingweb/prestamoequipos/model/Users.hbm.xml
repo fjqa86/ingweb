@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="com.ingweb.model.Users" table="users" catalog="ingweb" optimistic-lock="version">
+    <class name="com.ingweb.model.User" table="users" catalog="ingweb" optimistic-lock="version">
         <id name="idUser" type="string">
             <column name="id_user" length="250" />
             <generator class="assigned" />
@@ -59,7 +59,7 @@
                     <comment>Usuario que pide el prestamo</comment>
                 </column>
             </key>
-            <one-to-many class="com.ingweb.model.RequestLoanDevices" />
+            <one-to-many class="com.ingweb.model.RequestLoanDevicez" />
         </set>
     </class>
 </hibernate-mapping>

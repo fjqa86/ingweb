@@ -5,11 +5,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 
-public class Devices  implements java.io.Serializable {
+public class Device  implements java.io.Serializable {
 
 
      private Integer idDevice;
-     private Brands brands;
+     private Brand brand;
      private String reference;
      private String name;
      private boolean provided;
@@ -20,17 +20,17 @@ public class Devices  implements java.io.Serializable {
      private Set<RequestLoanDevices> requestLoanDeviceses = new HashSet<RequestLoanDevices>(0);
      private Set<AccetedLoanDevices> accetedLoanDeviceses = new HashSet<AccetedLoanDevices>(0);
 
-    public Devices() {
+    public Device() {
     }
 
 	
-    public Devices(String name, boolean provided, boolean disabled) {
+    public Device(String name, boolean provided, boolean disabled) {
         this.name = name;
         this.provided = provided;
         this.disabled = disabled;
     }
-    public Devices(Brands brands, String reference, String name, boolean provided, String userProvided, boolean disabled, String brandName, String description, Set<RequestLoanDevices> requestLoanDeviceses, Set<AccetedLoanDevices> accetedLoanDeviceses) {
-       this.brands = brands;
+    public Device(Brand brand, String reference, String name, boolean provided, String userProvided, boolean disabled, String brandName, String description, Set<RequestLoanDevices> requestLoanDeviceses, Set<AccetedLoanDevices> accetedLoanDeviceses) {
+       this.brand = brand;
        this.reference = reference;
        this.name = name;
        this.provided = provided;
@@ -49,12 +49,12 @@ public class Devices  implements java.io.Serializable {
     public void setIdDevice(Integer idDevice) {
         this.idDevice = idDevice;
     }
-    public Brands getBrands() {
-        return this.brands;
+    public Brand getBrands() {
+        return this.brand;
     }
     
-    public void setBrands(Brands brands) {
-        this.brands = brands;
+    public void setBrands(Brand brand) {
+        this.brand = brand;
     }
     public String getReference() {
         return this.reference;

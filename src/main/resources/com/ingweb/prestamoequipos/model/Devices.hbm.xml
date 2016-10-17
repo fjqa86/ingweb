@@ -2,12 +2,12 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="com.ingweb.model.Devices" table="devices" catalog="ingweb" optimistic-lock="version">
+    <class name="com.ingweb.model.Device" table="devices" catalog="ingweb" optimistic-lock="version">
         <id name="idDevice" type="java.lang.Integer">
             <column name="id_device" />
             <generator class="identity" />
         </id>
-        <many-to-one name="brands" class="com.ingweb.model.Brands" fetch="select">
+        <many-to-one name="brands" class="com.ingweb.model.Brand" fetch="select">
             <column name="brand_id">
                 <comment>Identificacion de la marca</comment>
             </column>

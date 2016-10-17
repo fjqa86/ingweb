@@ -11,9 +11,9 @@ public class RequestLoanDevices  implements java.io.Serializable {
 
 
      private int idrequestLoanDevices;
-     private Devices devices;
-     private Users usersByUserApproved;
-     private Users usersByUserRequest;
+     private Device device;
+     private User usersByUserApproved;
+     private User usersByUserRequest;
      private Date dateLoan;
      private Date dateClose;
      private Date dateRequest;
@@ -23,17 +23,17 @@ public class RequestLoanDevices  implements java.io.Serializable {
     }
 
 	
-    public RequestLoanDevices(int idrequestLoanDevices, Devices devices, Users usersByUserRequest, Date dateLoan, Date dateClose, Date dateRequest) {
+    public RequestLoanDevices(int idrequestLoanDevices, Device device, User usersByUserRequest, Date dateLoan, Date dateClose, Date dateRequest) {
         this.idrequestLoanDevices = idrequestLoanDevices;
-        this.devices = devices;
+        this.device = device;
         this.usersByUserRequest = usersByUserRequest;
         this.dateLoan = dateLoan;
         this.dateClose = dateClose;
         this.dateRequest = dateRequest;
     }
-    public RequestLoanDevices(int idrequestLoanDevices, Devices devices, Users usersByUserApproved, Users usersByUserRequest, Date dateLoan, Date dateClose, Date dateRequest, Boolean approved) {
+    public RequestLoanDevices(int idrequestLoanDevices, Device device, User usersByUserApproved, User usersByUserRequest, Date dateLoan, Date dateClose, Date dateRequest, Boolean approved) {
        this.idrequestLoanDevices = idrequestLoanDevices;
-       this.devices = devices;
+       this.device = device;
        this.usersByUserApproved = usersByUserApproved;
        this.usersByUserRequest = usersByUserRequest;
        this.dateLoan = dateLoan;
@@ -49,25 +49,25 @@ public class RequestLoanDevices  implements java.io.Serializable {
     public void setIdrequestLoanDevices(int idrequestLoanDevices) {
         this.idrequestLoanDevices = idrequestLoanDevices;
     }
-    public Devices getDevices() {
-        return this.devices;
+    public Device getDevices() {
+        return this.device;
     }
     
-    public void setDevices(Devices devices) {
-        this.devices = devices;
+    public void setDevices(Device device) {
+        this.device = device;
     }
-    public Users getUsersByUserApproved() {
+    public User getUsersByUserApproved() {
         return this.usersByUserApproved;
     }
     
-    public void setUsersByUserApproved(Users usersByUserApproved) {
+    public void setUsersByUserApproved(User usersByUserApproved) {
         this.usersByUserApproved = usersByUserApproved;
     }
-    public Users getUsersByUserRequest() {
+    public User getUsersByUserRequest() {
         return this.usersByUserRequest;
     }
     
-    public void setUsersByUserRequest(Users usersByUserRequest) {
+    public void setUsersByUserRequest(User usersByUserRequest) {
         this.usersByUserRequest = usersByUserRequest;
     }
     public Date getDateLoan() {

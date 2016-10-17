@@ -5,11 +5,11 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Users  implements java.io.Serializable {
+public class User  implements java.io.Serializable {
 
 
      private String idUser;
-     private Rols rols;
+     private Rol rol;
      private String password;
      private Date lastLogin;
      private boolean disabled;
@@ -19,19 +19,19 @@ public class Users  implements java.io.Serializable {
      private Set<RequestLoanDevices> requestLoanDevicesesForUserApproved = new HashSet<RequestLoanDevices>(0);
      private Set<RequestLoanDevices> requestLoanDevicesesForUserRequest = new HashSet<RequestLoanDevices>(0);
 
-    public Users() {
+    public User() {
     }
 
 	
-    public Users(String idUser, Rols rols, String password, boolean disabled) {
+    public User(String idUser, Rol rol, String password, boolean disabled) {
         this.idUser = idUser;
-        this.rols = rols;
+        this.rol = rol;
         this.password = password;
         this.disabled = disabled;
     }
-    public Users(String idUser, Rols rols, String password, Date lastLogin, boolean disabled, String name, String lastname, Set<AccetedLoanDevices> accetedLoanDeviceses, Set<RequestLoanDevices> requestLoanDevicesesForUserApproved, Set<RequestLoanDevices> requestLoanDevicesesForUserRequest) {
+    public User(String idUser, Rol rol, String password, Date lastLogin, boolean disabled, String name, String lastname, Set<AccetedLoanDevices> accetedLoanDeviceses, Set<RequestLoanDevices> requestLoanDevicesesForUserApproved, Set<RequestLoanDevices> requestLoanDevicesesForUserRequest) {
        this.idUser = idUser;
-       this.rols = rols;
+       this.rol = rol;
        this.password = password;
        this.lastLogin = lastLogin;
        this.disabled = disabled;
@@ -49,12 +49,12 @@ public class Users  implements java.io.Serializable {
     public void setIdUser(String idUser) {
         this.idUser = idUser;
     }
-    public Rols getRols() {
-        return this.rols;
+    public Rol getRols() {
+        return this.rol;
     }
     
-    public void setRols(Rols rols) {
-        this.rols = rols;
+    public void setRols(Rol rol) {
+        this.rol = rol;
     }
     public String getPassword() {
         return this.password;

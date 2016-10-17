@@ -4,21 +4,21 @@ package  com.ingweb.prestamoequipos.model;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Brands  implements java.io.Serializable {
+public class Brand  implements java.io.Serializable {
 
 
      private int idBrand;
      private String name;
-     private Set<Devices> deviceses = new HashSet<Devices>(0);
+     private Set<Device> deviceses = new HashSet<Device>(0);
 
-    public Brands() {
+    public Brand() {
     }
 
 	
-    public Brands(int idBrand) {
+    public Brand(int idBrand) {
         this.idBrand = idBrand;
     }
-    public Brands(int idBrand, String name, Set<Devices> deviceses) {
+    public Brand(int idBrand, String name, Set<Device> deviceses) {
        this.idBrand = idBrand;
        this.name = name;
        this.deviceses = deviceses;
@@ -38,11 +38,11 @@ public class Brands  implements java.io.Serializable {
     public void setName(String name) {
         this.name = name;
     }
-    public Set<Devices> getDeviceses() {
+    public Set<Device> getDeviceses() {
         return this.deviceses;
     }
     
-    public void setDeviceses(Set<Devices> deviceses) {
+    public void setDeviceses(Set<Device> deviceses) {
         this.deviceses = deviceses;
     }
 

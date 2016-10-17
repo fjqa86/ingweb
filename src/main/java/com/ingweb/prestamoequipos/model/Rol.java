@@ -4,24 +4,24 @@ package  com.ingweb.prestamoequipos.model;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Rols  implements java.io.Serializable {
+public class Rol  implements java.io.Serializable {
 
 
      private int idRol;
      private String name;
      private boolean disabled;
-     private Set<Users> userses = new HashSet<Users>(0);
+     private Set<User> userses = new HashSet<User>(0);
 
-    public Rols() {
+    public Rol() {
     }
 
 	
-    public Rols(int idRol, String name, boolean disabled) {
+    public Rol(int idRol, String name, boolean disabled) {
         this.idRol = idRol;
         this.name = name;
         this.disabled = disabled;
     }
-    public Rols(int idRol, String name, boolean disabled, Set<Users> userses) {
+    public Rol(int idRol, String name, boolean disabled, Set<User> userses) {
        this.idRol = idRol;
        this.name = name;
        this.disabled = disabled;
@@ -49,11 +49,11 @@ public class Rols  implements java.io.Serializable {
     public void setDisabled(boolean disabled) {
         this.disabled = disabled;
     }
-    public Set<Users> getUserses() {
+    public Set<User> getUserses() {
         return this.userses;
     }
     
-    public void setUserses(Set<Users> userses) {
+    public void setUserses(Set<User> userses) {
         this.userses = userses;
     }
 

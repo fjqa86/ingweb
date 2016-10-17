@@ -113,7 +113,15 @@ public class User  implements java.io.Serializable {
         this.requestLoanDevicesesForUserRequest = requestLoanDevicesesForUserRequest;
     }
 
-
+    public String validate(){
+    	StringBuilder sb = new StringBuilder();
+    	if (this.idUser == null || this.idUser.trim().length() == 0){
+    		sb.append("El id de usuario no debe ser vacìo. /n");
+    	}else{
+    		
+    	}
+    	return sb.toString();
+    }
 
 
 }

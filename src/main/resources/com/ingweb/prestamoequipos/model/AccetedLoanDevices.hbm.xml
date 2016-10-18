@@ -2,17 +2,17 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="com.ingweb.model.AccetedLoanDevices" table="acceted_loan_devices" catalog="ingweb" optimistic-lock="version">
+    <class name="com.ingweb.prestamoequipos.model.AccetedLoanDevices" table="acceted_loan_devices" catalog="ingweb" optimistic-lock="version">
         <id name="idacceptedLoanDevices" type="int">
             <column name="idaccepted_loan_devices" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="devices" class="com.ingweb.model.Device" fetch="select">
+        <many-to-one name="devices" class="com.ingweb.prestamoequipos.model.Device" fetch="select">
             <column name="device_id" not-null="true">
                 <comment>Identificador de equipo o dispositivo</comment>
             </column>
         </many-to-one>
-        <many-to-one name="users" class="com.ingweb.model.User" fetch="select">
+        <many-to-one name="users" class="com.ingweb.prestamoequipos.model.User" fetch="select">
             <column name="user_loan" length="250" not-null="true">
                 <comment>usuario que realizo la solicitud de prestamo</comment>
             </column>

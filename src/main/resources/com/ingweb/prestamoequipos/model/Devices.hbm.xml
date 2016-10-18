@@ -2,12 +2,12 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="com.ingweb.model.Device" table="devices" catalog="ingweb" optimistic-lock="version">
+    <class name="com.ingweb.prestamoequipos.model.Device" table="devices" catalog="ingweb" optimistic-lock="version">
         <id name="idDevice" type="java.lang.Integer">
             <column name="id_device" />
             <generator class="identity" />
         </id>
-        <many-to-one name="brands" class="com.ingweb.model.Brand" fetch="select">
+        <many-to-one name="brands" class="com.ingweb.prestamoequipos.model.Brand" fetch="select">
             <column name="brand_id">
                 <comment>Identificacion de la marca</comment>
             </column>
@@ -53,7 +53,7 @@
                     <comment>Identificador para el equipo o dispositivo a prestar</comment>
                 </column>
             </key>
-            <one-to-many class="com.ingweb.model.RequestLoanDevices" />
+            <one-to-many class="com.ingweb.prestamoequipos.model.RequestLoanDevices" />
         </set>
         <set name="accetedLoanDeviceses" table="acceted_loan_devices" inverse="true" lazy="true" fetch="select">
             <key>
@@ -61,7 +61,7 @@
                     <comment>Identificador de equipo o dispositivo</comment>
                 </column>
             </key>
-            <one-to-many class="com.ingweb.model.AccetedLoanDevices" />
+            <one-to-many class="com.ingweb.prestamoequipos.model.AccetedLoanDevices" />
         </set>
     </class>
 </hibernate-mapping>

@@ -49,11 +49,11 @@ public class RequestLoanDevices  implements java.io.Serializable {
     public void setIdrequestLoanDevices(int idrequestLoanDevices) {
         this.idrequestLoanDevices = idrequestLoanDevices;
     }
-    public Device getDevices() {
+    public Device getDevice() {
         return this.device;
     }
     
-    public void setDevices(Device device) {
+    public void setDevice(Device device) {
         this.device = device;
     }
     public User getUsersByUserApproved() {

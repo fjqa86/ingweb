@@ -2,12 +2,12 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="com.ingweb.model.User" table="users" catalog="ingweb" optimistic-lock="version">
+    <class name="com.ingweb.prestamoequipos.model.User" table="users" catalog="ingweb" optimistic-lock="version">
         <id name="idUser" type="string">
             <column name="id_user" length="250" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="rols" class="com.ingweb.model.Rols" fetch="select">
+        <many-to-one name="rols" class="com.ingweb.prestamoequipos.model.Rol" fetch="select">
             <column name="rol_id" not-null="true">
                 <comment>Rol del usuario</comment>
             </column>
@@ -43,7 +43,7 @@
                     <comment>usuario que realizo la solicitud de prestamo</comment>
                 </column>
             </key>
-            <one-to-many class="com.ingweb.model.AccetedLoanDevices" />
+            <one-to-many class="com.ingweb.prestamoequipos.model.AccetedLoanDevices" />
         </set>
         <set name="requestLoanDevicesesForUserApproved" table="request_loan_devices" inverse="true" lazy="true" fetch="select">
             <key>
@@ -51,7 +51,7 @@
                     <comment>Usuario que aprueba o cancela el prestamo</comment>
                 </column>
             </key>
-            <one-to-many class="com.ingweb.model.RequestLoanDevices" />
+            <one-to-many class="com.ingweb.prestamoequipos.model.RequestLoanDevices" />
         </set>
         <set name="requestLoanDevicesesForUserRequest" table="request_loan_devices" inverse="true" lazy="true" fetch="select">
             <key>
@@ -59,7 +59,7 @@
                     <comment>Usuario que pide el prestamo</comment>
                 </column>
             </key>
-            <one-to-many class="com.ingweb.model.RequestLoanDevicez" />
+            <one-to-many class="com.ingweb.prestamoequipos.model.RequestLoanDevices" />
         </set>
     </class>
 </hibernate-mapping>

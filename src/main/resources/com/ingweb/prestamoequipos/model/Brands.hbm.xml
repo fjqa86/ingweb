@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="com.ingweb.model.Brand" table="brands" catalog="ingweb" optimistic-lock="version">
+    <class name="com.ingweb.prestamoequipos.model.Brand" table="brands" catalog="ingweb" optimistic-lock="version">
         <id name="idBrand" type="int">
             <column name="id_brand" />
             <generator class="assigned" />
@@ -16,7 +16,7 @@
                     <comment>Identificacion de la marca</comment>
                 </column>
             </key>
-            <one-to-many class="com.ingweb.model.Device" />
+            <one-to-many class="com.ingweb.prestamoequipos.model.Device" />
         </set>
     </class>
 </hibernate-mapping>

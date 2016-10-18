@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="com.ingweb.model.Rol" table="rols" catalog="ingweb" optimistic-lock="version">
+    <class name="com.ingweb.prestamoequipos.model.Rol" table="rols" catalog="ingweb" optimistic-lock="version">
         <id name="idRol" type="int">
             <column name="id_rol" />
             <generator class="assigned" />
@@ -19,7 +19,7 @@
                     <comment>Rol del usuario</comment>
                 </column>
             </key>
-            <one-to-many class="com.ingweb.model.Users" />
+            <one-to-many class="com.ingweb.prestamoequipos.model.User" />
         </set>
     </class>
 </hibernate-mapping>

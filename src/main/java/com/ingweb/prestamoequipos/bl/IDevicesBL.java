@@ -1,39 +1,33 @@
 package com.ingweb.prestamoequipos.bl;
-
 import java.util.List;
 
-import com.ingweb.prestamoequipos.model.Brand;
+import com.ingweb.prestamoequipos.model.Device;
 
 /**
- * Interfaz logica del negocio para la clase Brand
+ * Interfaz logica del negocio para la clase Device
  * @author giovanny gomez @gio96gomez@gmail.com
  *
  */
-public interface IBrandBL 
+public interface IDevicesBL 
 {
-	
-	public void save(Brand brand);
+	public void save(Device device);
 	/**
-	 * Guarda el brand
+	 * Guarda el device
 	 * @param brand
 	 * @throws ValidationException
 	 * @throws DaoException
 	 */
-
-	
-	public void update(Brand brand);
+	public void update(Device device);
 	/**
-	 * Actualiza el brand
+	 * Actualiza el device
 	 * @param brand
 	 * @throws ValidationException
 	 * @throws DaoException
 	 */
 	
-	public List<Brand> list();
-	
+	public List<Device> list();
 	/**
 	 * Retorna una lista de Brand
-	 * @return brands
+	 * @return Device
 	 */
-	
 }

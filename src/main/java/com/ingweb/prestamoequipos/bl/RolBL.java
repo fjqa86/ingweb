@@ -12,7 +12,11 @@ import com.ingweb.prestamoequipos.dao.RolDao;
 import com.ingweb.prestamoequipos.exception.DaoException;
 import com.ingweb.prestamoequipos.exception.ValidationException;
 import com.ingweb.prestamoequipos.model.Rol;
-
+/**
+ * Implementación de la interfaz de la logica del negocio de Rol
+ * @author juandavid
+ *
+ */
 @Service("rolBL")
 @Transactional
 public class RolBL implements IRolBL {

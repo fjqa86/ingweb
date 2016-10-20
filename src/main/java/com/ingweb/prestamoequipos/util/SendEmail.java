@@ -12,7 +12,11 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
-
+/**
+ * Clase que envia un email
+ * @author juandavid
+ *
+ */
 public class SendEmail {
   private Properties propiedades;
   private Session sesion;
@@ -28,6 +32,12 @@ public class SendEmail {
       sesion = Session.getDefaultInstance(propiedades, new GmailAuthenticator("ingwebudea2016@gmail.com", "ingweb2016"));
 
 }
+  /**
+   * Metodo que envia el correo
+   * @param para
+   * @param asunto
+   * @param cuerpo
+   */
   public void enviar(String para, String asunto,String cuerpo){
       Transport transport;
       try {

@@ -5,7 +5,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.ingweb.prestamoequipos.bl.ValidatorUtil;
-
+/**
+ * Clase para la marca
+ * @author juandavid
+ *
+ */
 public class Brand  implements java.io.Serializable {
 
 

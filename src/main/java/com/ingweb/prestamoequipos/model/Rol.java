@@ -5,7 +5,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.ingweb.prestamoequipos.bl.ValidatorUtil;
-
+/**
+ * Clase para los roles
+ * @author juandavid
+ *
+ */
 public class Rol  implements java.io.Serializable {
 
 

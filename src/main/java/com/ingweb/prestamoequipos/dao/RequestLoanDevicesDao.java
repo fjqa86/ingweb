@@ -8,7 +8,11 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 
 import com.ingweb.prestamoequipos.model.RequestLoanDevices;
-
+/**
+ * Extiende de la clase GenericDao
+ * @author juandavid
+ *
+ */
 public class RequestLoanDevicesDao extends GenericDao<RequestLoanDevices> {
 
 	public RequestLoanDevicesDao(SessionFactory sessionFactory) {

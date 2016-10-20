@@ -3,7 +3,12 @@ package com.ingweb.prestamoequipos.dao;
 import java.util.List;
 
 import org.hibernate.Criteria;
-
+/**
+ * Interfaz para el dao generico
+ * @author juandavid
+ *
+ * @param <T>
+ */
 public interface IGenericDao<T> {
 	
 	public void save(T object);	

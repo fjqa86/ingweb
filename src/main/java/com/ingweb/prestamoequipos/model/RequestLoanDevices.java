@@ -3,7 +3,11 @@ package  com.ingweb.prestamoequipos.model;
 
 
 import java.util.Date;
-
+/**
+ * Clase para las solicitudes de prestamo
+ * @author juandavid
+ *
+ */
 public class RequestLoanDevices  implements java.io.Serializable {
 
 

@@ -4,7 +4,11 @@ package com.ingweb.prestamoequipos.model;
 
 import java.util.Date;
 
-
+/**
+ * Clase para solicitud de prestamo aprobada
+ * @author juandavid
+ *
+ */
 public class AccetedLoanDevices  implements java.io.Serializable {
 
 

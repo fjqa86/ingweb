@@ -6,7 +6,11 @@ import java.util.Set;
 
 import com.ingweb.prestamoequipos.bl.ValidatorUtil;
 
-
+/**
+ * Clase para los dispositivos
+ * @author juandavid
+ *
+ */
 public class Device  implements java.io.Serializable {
 
 

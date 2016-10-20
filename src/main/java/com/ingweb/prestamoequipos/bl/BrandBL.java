@@ -12,7 +12,6 @@ import com.ingweb.prestamoequipos.exception.ValidationException;
 import com.ingweb.prestamoequipos.model.Brand;
 
 
-//esto de aqui que es ?
 @Transactional
 public class BrandBL implements IBrandBL 
 {
@@ -46,16 +45,6 @@ public class BrandBL implements IBrandBL
 		}
 	}
 	
-	/*public void delete(Brand brand) {
-		String validacion = brand.validate();
-		if ("".equals(validacion)) {
-			brandDao.delete(brand);
-		} else {
-			throw new ValidationException(validacion);
-		}
-	}*/
-	
-
 
 	public List<Brand> list() {
 		List<Brand> brands = brandDao.list();

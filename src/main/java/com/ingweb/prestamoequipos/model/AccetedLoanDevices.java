@@ -45,11 +45,11 @@ public class AccetedLoanDevices  implements java.io.Serializable {
     public void setDevices(Device device) {
         this.device = device;
     }
-    public User getUsers() {
+    public User getUser() {
         return this.user;
     }
     
-    public void setUsers(User user) {
+    public void setUser(User user) {
         this.user = user;
     }
     public Date getDateLoan() {

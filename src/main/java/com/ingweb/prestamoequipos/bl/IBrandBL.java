@@ -10,10 +10,6 @@ public interface IBrandBL
 	
 	public void update(Brand brand);
 	
-	public void delete(Brand brand);// seria mejor implementarlo en devices
-	
-	public void search(Brand brand);// seria mejor implementarlo en devices
-	
 	public List<Brand> list();
 	
 }

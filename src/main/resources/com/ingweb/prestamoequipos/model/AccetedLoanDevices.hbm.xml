@@ -12,7 +12,7 @@
                 <comment>Identificador de equipo o dispositivo</comment>
             </column>
         </many-to-one>
-        <many-to-one name="users" class="com.ingweb.prestamoequipos.model.User" fetch="select">
+        <many-to-one name="user" class="com.ingweb.prestamoequipos.model.User" fetch="select">
             <column name="user_loan" length="250" not-null="true">
                 <comment>usuario que realizo la solicitud de prestamo</comment>
             </column>

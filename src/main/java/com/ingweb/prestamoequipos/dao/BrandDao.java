@@ -9,5 +9,6 @@ public class BrandDao extends GenericDao<Brand> {
 	public BrandDao(SessionFactory sessionFactory) {
 		super(sessionFactory,Brand.class);
 	}
+	
 
 }

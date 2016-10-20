@@ -27,10 +27,11 @@ public class BrandTest {
 	public void saveExist(){
 		try{
 			Brand brand = new Brand();
-			brand.setIdBrand(1);
+			brand.setIdBrand(2);
 			brand.setName("DELL");
 			brandBL.save(brand);			
 		}catch (Exception e) {
+			fail(e.getMessage());
 		}
 	}
 	

@@ -58,7 +58,7 @@ public class Brand  implements java.io.Serializable {
      */
     public String validate(){
     	StringBuilder sb = new StringBuilder();
-    	if (idBrand>0){
+    	if (idBrand<1){
     		sb.append("El id de marca no debe ser 0 ó negativo. /n");
     	}
     	if(ValidatorUtil.getInstance().stringValidator(name)){

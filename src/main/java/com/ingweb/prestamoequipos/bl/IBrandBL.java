@@ -22,12 +22,14 @@ public interface IBrandBL
 
 	
 	public void update(Brand brand);
+
 	/**
 	 * Actualiza el brand
 	 * @param brand
 	 * @throws ValidationException
 	 * @throws DaoException
 	 */
+
 	
 	public List<Brand> list();
 	

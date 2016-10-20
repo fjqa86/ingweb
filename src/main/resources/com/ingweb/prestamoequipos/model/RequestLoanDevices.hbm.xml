@@ -5,7 +5,7 @@
     <class name="com.ingweb.prestamoequipos.model.RequestLoanDevices" table="request_loan_devices" catalog="ingweb" optimistic-lock="version">
         <id name="idrequestLoanDevices" type="int">
             <column name="idrequest_loan_devices" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <many-to-one name="device" class="com.ingweb.prestamoequipos.model.Device" fetch="select">
             <column name="device_id" not-null="true">

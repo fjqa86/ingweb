@@ -64,6 +64,12 @@
 		<bean id="deviceDao" class="com.ingweb.prestamoequipos.dao.DeviceDao">
 		<constructor-arg ref="sessionFactory" />
 	</bean>
+	<bean id="requestLoanDevicesDao" class="com.ingweb.prestamoequipos.dao.RequestLoanDevicesDao">
+		<constructor-arg ref="sessionFactory" />
+	</bean>
+		<bean id="acceptedLoanDevicesDao" class="com.ingweb.prestamoequipos.dao.AcceptedLoanDevicesDao">
+		<constructor-arg ref="sessionFactory" />
+	</bean>
 		
 	
 </beans>

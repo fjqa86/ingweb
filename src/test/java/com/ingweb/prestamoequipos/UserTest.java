@@ -1,5 +1,6 @@
 package com.ingweb.prestamoequipos;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import org.junit.Test;
@@ -19,6 +20,10 @@ public class UserTest {
 	@Autowired
 	private IUserBL userBL;
 
+	/*
+	 * Prueba el registro de usaurio, si el correo esta no registrado y la contraseña cumple con 
+	 * los criterios.
+	 */
 	@Test
 	public void save() {
 		try {
@@ -37,14 +42,30 @@ public class UserTest {
 	}
 	
 	/**
-	 * prueba que el password tenga al menos 8 caracteres , una letra minuscuyla
-	 * y una letra mayuscula
+	 * 
+	 */
+	@Test
+	public void login() {
+		try {
+			User user = new User();
+			user.setIdUser("javier.quintero@udea.edu.co");
+			user.setPassword("0ihdkc");
+			boolean permitido = userBL.login(user);
+			assertTrue(permitido);
+		} catch (Exception e) {
+			fail(e.getMessage());
+		}
+	}
+	
+	/**
+	 * prueba que el password tenga al menos 8 caracteres , una letra minuscula
+	 * y una letra mayuscula.
 	 */
 	@Test
 	public void passwordStreng() {
 		try {
 			User user = new User();
-			user.setIdUser("javier.quintero@udea.edu.co");
+			user.setIdUser("prueba.quintero@udea.edu.co");
 			user.setName("Francisco");
 			user.setLastname("Quintero");
 			Rol rol = new Rol();
@@ -53,7 +74,23 @@ public class UserTest {
 			user.setPassword("fernado");
 			userBL.signUp(user);
 		} catch (Exception e) {
-			e.printStackTrace();
+			assertTrue(e.getMessage(),true);
 		}
 	}
+	
+	/**
+	 * Prueba la recuperaciòn de contraseña, debe enviar un correo a la dirección.
+	 */
+	/*@Test
+	public void lostPasswor() {
+		try {
+			User user = new User();
+			user.setIdUser("javier.quintero@udea.edu.co");
+			userBL.lostPassword(user);
+		} catch (Exception e) {
+			fail(e.getMessage());
+		}
+	}*/
+	
+
 }

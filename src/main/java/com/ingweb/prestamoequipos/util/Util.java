@@ -2,6 +2,7 @@ package com.ingweb.prestamoequipos.util;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Date;
 import java.util.Random;
 
 /**
@@ -13,7 +14,7 @@ import java.util.Random;
 public class Util {
 
 	/**
-	 * Encripta una cadena en sha 356
+	 * Encripta una cadena en sha 256
 	 * 
 	 * @param cadena
 	 * @return retorna una cadena nueva encriptada
@@ -51,5 +52,17 @@ public class Util {
 		}
 		return contrasena.toString();
 	}
+	
+	/**
+	 * Resta dos fechas y devuelve el resultado en horas
+	 * @param fechaMayor
+	 * @param fechaMenor
+	 * @return
+	 */
+	public static int restarFechas(Date fechaMayor, Date fechaMenor) {
+		long diferenciaEn_ms = fechaMayor.getTime() - fechaMenor.getTime();
+		long horas = diferenciaEn_ms / (1000 * 60 * 60);
+		return (int) horas;
+		}
 
 }

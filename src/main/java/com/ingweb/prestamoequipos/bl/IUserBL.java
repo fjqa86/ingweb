@@ -8,7 +8,7 @@ public interface IUserBL {
 	
 	public void lostPassword(User user);
 	
-	public void changePassword(User user);
+	public void changePassword(String idUser,String oldPassword,String newPassword);
 	
-	public void login(User user);
+	public boolean login(User user);
 }

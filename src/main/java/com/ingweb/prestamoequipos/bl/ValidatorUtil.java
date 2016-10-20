@@ -6,7 +6,8 @@ package com.ingweb.prestamoequipos.bl;
  *
  */
 public class ValidatorUtil {
-	 private final String emailregex = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
+	 private final String emailRegex = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
+	 private final String passworwRegex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$).{8,10}$";
 
 	private static ValidatorUtil instance = null;
 
@@ -39,5 +40,17 @@ public class ValidatorUtil {
 			return true;
 		}
 		return false;
+	}
+	
+	/**
+	 * Toma un string y valida que contenga 8 caracteres y mayusculas y minusculas
+	 * @param s
+	 * @return retorna falso si la cadena cumple con la expresión
+	 */
+	public boolean passwordStrength(String s){
+		if(s.matches(passworwRegex)){
+			return false;
+		}
+		return true;
 	}
 }

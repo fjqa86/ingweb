@@ -128,9 +128,6 @@ public class Device  implements java.io.Serializable {
      */
     public String validate(){
     	StringBuilder sb = new StringBuilder();
-    	if (idDevice == null || idDevice <1){
-    		sb.append("El id del dispositivo no debe ser vacío. /n");
-    	}
     	if(brand == null){
     		sb.append("Seleccione una marca por favor. /n");
     	}

@@ -24,7 +24,7 @@ public class RequestLoanDevicesTest {
 	@Autowired
 	IRequestLoanDevicesBL requestLoanDevicesBL;
 	
-	@Test
+	/*@Test
 	public void save(){
 		RequestLoanDevices loanDevices = new RequestLoanDevices();
 		User userLoan = new User();
@@ -42,7 +42,7 @@ public class RequestLoanDevicesTest {
 		} catch (ParseException e) {
 			fail(e.getMessage());
 		}
-	}
+	}*/
 	
 	/*@Test
 	public void saveInvalidAfter(){
@@ -103,4 +103,28 @@ public class RequestLoanDevicesTest {
 			fail(e.getMessage());
 		}
 	}*/
+	
+	@Test
+	public void aceptar(){
+		RequestLoanDevices loanDevices = new RequestLoanDevices();
+		User userLoan = new User();
+		loanDevices.setIdrequestLoanDevices(2);
+		userLoan.setIdUser("javier.quintero@udea.edu.co");
+		Device device = new Device();
+		device.setIdDevice(1);
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
+		try {
+			loanDevices.setDateLoan(sdf.parse("2016-10-20 13:00:00"));
+			loanDevices.setDateClose(sdf.parse("2016-10-20 14:00:00"));
+			loanDevices.setDateRequest(new Date());
+			loanDevices.setDevice(device);
+			loanDevices.setUsersByUserRequest(userLoan);
+			loanDevices.setUsersByUserApproved(userLoan);
+			loanDevices.setApproved(true);
+			requestLoanDevicesBL.acceptRequest(loanDevices);
+			
+		} catch (ParseException e) {
+			fail(e.getMessage());
+		}
+	}
 }

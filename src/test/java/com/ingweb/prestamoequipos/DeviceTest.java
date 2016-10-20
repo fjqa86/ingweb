@@ -29,13 +29,13 @@ public class DeviceTest {
 		try{
 			Brand brand = new Brand();
 			brand.setIdBrand(1);
-			brand.setName("DELL");
 			Device device = new Device();
-			device.setIdDevice(1);
-			device.setName("computador");
+			device.setIdDevice(0);
+			device.setName("computador 2");
 			device.setBrands(brand);
 			devicesBL.save(device);			
 		}catch (Exception e) {
+			fail(e.getMessage());
 		}
 	}
 	

@@ -57,6 +57,10 @@ public class RequestLoanDevicesBL implements IRequestLoanDevicesBL {
 		}
 
 	}
+	
+	/**
+	 * Metodo para acpetar una solicitud pendiente
+	 */
 
 	@Override
 	public void acceptRequest(RequestLoanDevices requesLoanDevices) {

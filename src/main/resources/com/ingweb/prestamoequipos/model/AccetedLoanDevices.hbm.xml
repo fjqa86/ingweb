@@ -5,7 +5,7 @@
     <class name="com.ingweb.prestamoequipos.model.AccetedLoanDevices" table="acceted_loan_devices" catalog="ingweb" optimistic-lock="version">
         <id name="idacceptedLoanDevices" type="int">
             <column name="idaccepted_loan_devices" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <many-to-one name="devices" class="com.ingweb.prestamoequipos.model.Device" fetch="select">
             <column name="device_id" not-null="true">
@@ -28,12 +28,12 @@
             </column>
         </property>
         <property name="dateReturn" type="timestamp">
-            <column name="date_return" length="19" not-null="true">
+            <column name="date_return" length="19" >
                 <comment>fecha y hora de devolucion de dispositivo por parte del usuario</comment>
             </column>
         </property>
         <property name="dateDelivery" type="timestamp">
-            <column name="date_delivery" length="19" not-null="true">
+            <column name="date_delivery" length="19" >
                 <comment>fecha y hora de entrega de equipo o dispositivo por parte del administrador</comment>
             </column>
         </property>

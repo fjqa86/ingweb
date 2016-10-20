@@ -4,6 +4,8 @@ package  com.ingweb.prestamoequipos.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.ingweb.prestamoequipos.bl.ValidatorUtil;
+
 public class Rol  implements java.io.Serializable {
 
 
@@ -57,7 +59,20 @@ public class Rol  implements java.io.Serializable {
         this.userses = userses;
     }
 
-
+    /**
+     * Valida si los campos ingresados de rol son validos.
+     * @return vacio si la validación es correcto o mensaje de error
+     */
+    public String validate(){
+    	StringBuilder sb = new StringBuilder();
+    	if (idRol<1){
+    		sb.append("El id de rol no debe ser 0 ó negativo. /n");
+    	}
+    	if(ValidatorUtil.getInstance().stringValidator(name)){
+    		sb.append("El nombre no debe ser vacío.");
+    	}
+    	return sb.toString();
+    }
 
 
 }

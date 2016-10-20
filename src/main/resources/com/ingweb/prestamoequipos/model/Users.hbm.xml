@@ -37,29 +37,6 @@
                 <comment>Apellidos del usuario</comment>
             </column>
         </property>
-        <set name="accetedLoanDeviceses" table="acceted_loan_devices" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="user_loan" length="250" not-null="true">
-                    <comment>usuario que realizo la solicitud de prestamo</comment>
-                </column>
-            </key>
-            <one-to-many class="com.ingweb.prestamoequipos.model.AccetedLoanDevices" />
-        </set>
-        <set name="requestLoanDevicesesForUserApproved" table="request_loan_devices" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="user_approved" length="250">
-                    <comment>Usuario que aprueba o cancela el prestamo</comment>
-                </column>
-            </key>
-            <one-to-many class="com.ingweb.prestamoequipos.model.RequestLoanDevices" />
-        </set>
-        <set name="requestLoanDevicesesForUserRequest" table="request_loan_devices" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="user_request" length="250" not-null="true">
-                    <comment>Usuario que pide el prestamo</comment>
-                </column>
-            </key>
-            <one-to-many class="com.ingweb.prestamoequipos.model.RequestLoanDevices" />
-        </set>
+        
     </class>
 </hibernate-mapping>

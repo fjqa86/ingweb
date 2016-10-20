@@ -4,6 +4,8 @@ package  com.ingweb.prestamoequipos.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.ingweb.prestamoequipos.bl.ValidatorUtil;
+
 
 public class Device  implements java.io.Serializable {
 
@@ -120,7 +122,23 @@ public class Device  implements java.io.Serializable {
         this.accetedLoanDeviceses = accetedLoanDeviceses;
     }
 
-
+    /**
+     * Valida si los campos ingresados del dispositivo son validos.
+     * @return vacio si la validación es correcto o mensaje de error
+     */
+    public String validate(){
+    	StringBuilder sb = new StringBuilder();
+    	if (idDevice == null || idDevice <1){
+    		sb.append("El id del dispositivo no debe ser vacío. /n");
+    	}
+    	if(brand == null){
+    		sb.append("Seleccione una marca por favor. /n");
+    	}
+    	if(ValidatorUtil.getInstance().stringValidator(name)){
+    		sb.append("El nombre no debe ser vacío.");
+    	}
+    	return sb.toString();
+    }
 
 
 }

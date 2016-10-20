@@ -8,7 +8,7 @@ public interface IGenericDao<T> {
 	
 	public void save(T object);	
 	public void update(T object);
-	public void findById(String id);
+	public T findById(Object id);
 	public List<T> list();
 	public List<T> find(Criteria c);
 

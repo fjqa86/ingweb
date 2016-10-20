@@ -5,9 +5,18 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.ingweb.prestamoequipos.bl.ValidatorUtil;
+
+/**
+ * Clase para manejo de información del usuario
+ * 
+ * @since 2016
+ * @author FranciscoJavier
+ *
+ */
 public class User  implements java.io.Serializable {
 
-
+	// correolectronico del usuario
      private String idUser;
      private Rol rol;
      private String password;
@@ -15,9 +24,7 @@ public class User  implements java.io.Serializable {
      private boolean disabled;
      private String name;
      private String lastname;
-     private Set<AccetedLoanDevices> accetedLoanDeviceses = new HashSet<AccetedLoanDevices>(0);
-     private Set<RequestLoanDevices> requestLoanDevicesesForUserApproved = new HashSet<RequestLoanDevices>(0);
-     private Set<RequestLoanDevices> requestLoanDevicesesForUserRequest = new HashSet<RequestLoanDevices>(0);
+    
 
     public User() {
     }
@@ -29,7 +36,7 @@ public class User  implements java.io.Serializable {
         this.password = password;
         this.disabled = disabled;
     }
-    public User(String idUser, Rol rol, String password, Date lastLogin, boolean disabled, String name, String lastname, Set<AccetedLoanDevices> accetedLoanDeviceses, Set<RequestLoanDevices> requestLoanDevicesesForUserApproved, Set<RequestLoanDevices> requestLoanDevicesesForUserRequest) {
+    public User(String idUser, Rol rol, String password, Date lastLogin, boolean disabled, String name, String lastname) {
        this.idUser = idUser;
        this.rol = rol;
        this.password = password;
@@ -37,9 +44,7 @@ public class User  implements java.io.Serializable {
        this.disabled = disabled;
        this.name = name;
        this.lastname = lastname;
-       this.accetedLoanDeviceses = accetedLoanDeviceses;
-       this.requestLoanDevicesesForUserApproved = requestLoanDevicesesForUserApproved;
-       this.requestLoanDevicesesForUserRequest = requestLoanDevicesesForUserRequest;
+      
     }
    
     public String getIdUser() {
@@ -91,34 +96,25 @@ public class User  implements java.io.Serializable {
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
-    public Set<AccetedLoanDevices> getAccetedLoanDeviceses() {
-        return this.accetedLoanDeviceses;
-    }
-    
-    public void setAccetedLoanDeviceses(Set<AccetedLoanDevices> accetedLoanDeviceses) {
-        this.accetedLoanDeviceses = accetedLoanDeviceses;
-    }
-    public Set<RequestLoanDevices> getRequestLoanDevicesesForUserApproved() {
-        return this.requestLoanDevicesesForUserApproved;
-    }
-    
-    public void setRequestLoanDevicesesForUserApproved(Set<RequestLoanDevices> requestLoanDevicesesForUserApproved) {
-        this.requestLoanDevicesesForUserApproved = requestLoanDevicesesForUserApproved;
-    }
-    public Set<RequestLoanDevices> getRequestLoanDevicesesForUserRequest() {
-        return this.requestLoanDevicesesForUserRequest;
-    }
-    
-    public void setRequestLoanDevicesesForUserRequest(Set<RequestLoanDevices> requestLoanDevicesesForUserRequest) {
-        this.requestLoanDevicesesForUserRequest = requestLoanDevicesesForUserRequest;
-    }
-
+   
+    /**
+     * Valida si los campos ingresados de usuario son validos.
+     * @return vacio si la validación es correcto o mensaje de error
+     */
     public String validate(){
     	StringBuilder sb = new StringBuilder();
-    	if (this.idUser == null || this.idUser.trim().length() == 0){
+    	if (ValidatorUtil.getInstance().stringValidator(idUser)){
     		sb.append("El id de usuario no debe ser vacìo. /n");
     	}else{
-    		
+    		if(ValidatorUtil.getInstance().emailValidator(idUser)){
+    			sb.append("El id de usuario no parece ser un email valido. /n");
+    		}
+    	}
+    	if(rol == null){
+    		sb.append("Seleccione un rol por favor. /n");
+    	}
+    	if(ValidatorUtil.getInstance().stringValidator(name)){
+    		sb.append("El nombre no debe ser vacío.");
     	}
     	return sb.toString();
     }

@@ -4,6 +4,8 @@ package  com.ingweb.prestamoequipos.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.ingweb.prestamoequipos.bl.ValidatorUtil;
+
 public class Brand  implements java.io.Serializable {
 
 
@@ -46,7 +48,20 @@ public class Brand  implements java.io.Serializable {
         this.deviceses = deviceses;
     }
 
-
+    /**
+     * Valida si los campos ingresados de marca son validos.
+     * @return vacio si la validación es correcto o mensaje de error
+     */
+    public String validate(){
+    	StringBuilder sb = new StringBuilder();
+    	if (idBrand>0){
+    		sb.append("El id de marca no debe ser 0 ó negativo. /n");
+    	}
+    	if(ValidatorUtil.getInstance().stringValidator(name)){
+    		sb.append("El nombre no debe ser vacío.");
+    	}
+    	return sb.toString();
+    }
 
 
 }

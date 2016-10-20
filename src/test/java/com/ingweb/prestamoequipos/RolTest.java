@@ -20,14 +20,25 @@ public class RolTest {
 	@Autowired
 	private IRolBL rolBL;
 	
+	/**
+	 * Prueba que no permita grabar un rol existente
+	 */
 	@Test
-	public void save(){
+	public void saveExist(){
 		try{
 			Rol rol = new Rol();
 			rol.setIdRol(1);
 			rol.setName("Admisnitrador");
 			rol.setDisabled(false);
 			rolBL.save(rol);			
+		}catch (Exception e) {
+		}
+	}
+	
+	@Test
+	public void list(){
+		try{
+			rolBL.list();			
 		}catch (Exception e) {
 			fail(e.getMessage());
 		}

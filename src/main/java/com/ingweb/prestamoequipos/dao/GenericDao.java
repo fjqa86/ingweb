@@ -1,5 +1,7 @@
 package com.ingweb.prestamoequipos.dao;
 
+import static org.hamcrest.CoreMatchers.instanceOf;
+
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -42,9 +44,14 @@ public class GenericDao<T> implements IGenericDao<T>{
 		
 	}
 
-	public void findById(String id) {
-		getSession().get(t,id);
-		
+	public T findById(Object id) {
+		if (id instanceof Integer){
+			return (T) getSession().get(t,(Integer)id);
+		}
+		if (id instanceof String){
+			return (T) getSession().get(t,(String)id);
+		}
+		return null; 
 	}
 
 	public List<T> list() {

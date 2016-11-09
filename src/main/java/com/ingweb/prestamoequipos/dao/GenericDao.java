@@ -1,14 +1,12 @@
 package com.ingweb.prestamoequipos.dao;
 
-import static org.hamcrest.CoreMatchers.instanceOf;
 
 import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+
 
 /**
  * Clase generica para acceso a datos de de operaciones crud. Recibe una clase en el constructor para su construcción.

@@ -17,31 +17,31 @@ public class AcceptedLoanDevicesDao extends GenericDao<AccetedLoanDevices> {
 		// TODO Auto-generated constructor stub
 	}
 
-	public void getNumberLoanByDates(Date init, Date close,String idUser){
+	public void getNumberLoanByDates(Date init, Date close,String idDevice){
 		Criteria c = getSession().createCriteria(AccetedLoanDevices.class);
 		c.add(Restrictions.gt("dateLoan",init ));
 		c.add(Restrictions.lt("dateLoan", close));
-		c.add(Restrictions.eq("user.idUser", idUser));
+		c.add(Restrictions.eq("device.idDevice", idDevice));
 		List lista = c.list();
 		if (lista != null && lista.size()>1) {
-			throw new DaoException("Hay una solicitud de prestamo que choca con la nueva solicitud.");
+			throw new DaoException("Hay una solicitud de prestamo del dispositivo que choca con la nueva solicitud.");
 		}
 		c = getSession().createCriteria(AccetedLoanDevices.class);
 		c.add(Restrictions.lt("dateLoan",init ));
 		c.add(Restrictions.gt("dateClose", close));
-		c.add(Restrictions.eq("user.idUser", idUser));
+		c.add(Restrictions.eq("device.idDevice", idDevice));
 		lista = c.list();
 		if (lista != null && lista.size()>1) {
-			throw new DaoException("Hay una solicitud de prestamo que choca con la nueva solicitud.");
+			throw new DaoException("Hay una solicitud de prestamo prestamo del dispositivo que choca con la nueva solicitud.");
 		}
 		
 		c = getSession().createCriteria(AccetedLoanDevices.class);
 		c.add(Restrictions.gt("dateClose",init ));
 		c.add(Restrictions.lt("dateClose", close));
-		c.add(Restrictions.eq("user.idUser", idUser));
+		c.add(Restrictions.eq("device.idDevice", idDevice));
 		lista = c.list();
 		if (lista != null && lista.size()>1) {
-			throw new DaoException("Hay una solicitud de prestamo que choca con la nueva solicitud.");
+			throw new DaoException("Hay una solicitud de prestamo prestamo del dispositivo que choca con la nueva solicitud.");
 		}
 	}
 }

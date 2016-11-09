@@ -51,8 +51,18 @@ public class DevicesBL implements IDevicesBL {
 			throw new ValidationException(validacion);
 		}
 
-	}
+	}	
 
+	@Override
+	public void delete(Integer id) {
+		if(id == null){
+			throw new DaoException("El id del equipo no puede ser nulo.");
+		}
+		Device device = deviceDao.findById(id);
+		device.setDisabled(true);
+		deviceDao.update(device);		
+	}
+	
 	@Override
 	public List<Device> list() {
 		List<Device> devices = deviceDao.list();

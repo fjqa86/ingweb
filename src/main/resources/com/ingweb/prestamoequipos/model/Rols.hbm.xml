@@ -13,13 +13,13 @@
         <property name="disabled" type="boolean">
             <column name="disabled" not-null="true" />
         </property>
-        <set name="userses" table="users" inverse="true" lazy="true" fetch="select">
+       <!--  <set name="userses" table="users" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="rol_id" not-null="true">
                     <comment>Rol del usuario</comment>
                 </column>
             </key>
             <one-to-many class="com.ingweb.prestamoequipos.model.User" />
-        </set>
+        </set>-->
     </class>
 </hibernate-mapping>

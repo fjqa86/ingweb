@@ -25,6 +25,11 @@ public interface IDevicesBL
 	 * @throws DaoException
 	 */
 	
+	public void delete(Integer id);
+	/**
+	 * Elimina un device de la base de datos solo lògicamente
+	 * @param id numero de device a eliminar
+	 */
 	public List<Device> list();
 	/**
 	 * Retorna una lista de Brand

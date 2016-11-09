@@ -16,7 +16,7 @@ import com.ingweb.prestamoequipos.bl.IRequestLoanDevicesBL;
 import com.ingweb.prestamoequipos.model.Device;
 import com.ingweb.prestamoequipos.model.RequestLoanDevices;
 import com.ingweb.prestamoequipos.model.User;
-
+/*
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("/applicationContext.xml")
 public class RequestLoanDevicesTest {
@@ -24,7 +24,7 @@ public class RequestLoanDevicesTest {
 	@Autowired
 	IRequestLoanDevicesBL requestLoanDevicesBL;
 	
-	/*@Test
+	@Test
 	public void save(){
 		RequestLoanDevices loanDevices = new RequestLoanDevices();
 		User userLoan = new User();
@@ -104,7 +104,7 @@ public class RequestLoanDevicesTest {
 		}
 	}*/
 	
-	@Test
+	/*@Test
 	public void aceptar(){
 		RequestLoanDevices loanDevices = new RequestLoanDevices();
 		User userLoan = new User();
@@ -127,4 +127,4 @@ public class RequestLoanDevicesTest {
 			fail(e.getMessage());
 		}
 	}
-}
+}*/

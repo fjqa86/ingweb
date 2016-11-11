@@ -15,7 +15,7 @@ public class Brand  implements java.io.Serializable {
 
      private int idBrand;
      private String name;
-     private Set<Device> deviceses = new HashSet<Device>(0);
+   //  private Set<Device> deviceses = new HashSet<Device>(0);
 
     public Brand() {
     }
@@ -27,7 +27,7 @@ public class Brand  implements java.io.Serializable {
     public Brand(int idBrand, String name, Set<Device> deviceses) {
        this.idBrand = idBrand;
        this.name = name;
-       this.deviceses = deviceses;
+   //    this.deviceses = deviceses;
     }
    
     public int getIdBrand() {
@@ -44,13 +44,13 @@ public class Brand  implements java.io.Serializable {
     public void setName(String name) {
         this.name = name;
     }
-    public Set<Device> getDeviceses() {
+  /*  public Set<Device> getDeviceses() {
         return this.deviceses;
     }
     
     public void setDeviceses(Set<Device> deviceses) {
         this.deviceses = deviceses;
-    }
+    }*/
 
     /**
      * Valida si los campos ingresados de marca son validos.

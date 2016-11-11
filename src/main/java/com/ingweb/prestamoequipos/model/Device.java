@@ -23,8 +23,8 @@ public class Device  implements java.io.Serializable {
      private boolean disabled;
      private String brandName;
      private String description;
-     private Set<RequestLoanDevices> requestLoanDeviceses = new HashSet<RequestLoanDevices>(0);
-     private Set<AccetedLoanDevices> accetedLoanDeviceses = new HashSet<AccetedLoanDevices>(0);
+    // private Set<RequestLoanDevices> requestLoanDeviceses = new HashSet<RequestLoanDevices>(0);
+    // private Set<AccetedLoanDevices> accetedLoanDeviceses = new HashSet<AccetedLoanDevices>(0);
 
     public Device() {
     }
@@ -44,8 +44,8 @@ public class Device  implements java.io.Serializable {
        this.disabled = disabled;
        this.brandName = brandName;
        this.description = description;
-       this.requestLoanDeviceses = requestLoanDeviceses;
-       this.accetedLoanDeviceses = accetedLoanDeviceses;
+    //   this.requestLoanDeviceses = requestLoanDeviceses;
+    //   this.accetedLoanDeviceses = accetedLoanDeviceses;
     }
    
     public Integer getIdDevice() {
@@ -111,7 +111,7 @@ public class Device  implements java.io.Serializable {
     public void setDescription(String description) {
         this.description = description;
     }
-    public Set<RequestLoanDevices> getRequestLoanDeviceses() {
+/*    public Set<RequestLoanDevices> getRequestLoanDeviceses() {
         return this.requestLoanDeviceses;
     }
     
@@ -125,7 +125,7 @@ public class Device  implements java.io.Serializable {
     public void setAccetedLoanDeviceses(Set<AccetedLoanDevices> accetedLoanDeviceses) {
         this.accetedLoanDeviceses = accetedLoanDeviceses;
     }
-
+*/
     /**
      * Valida si los campos ingresados del dispositivo son validos.
      * @return vacio si la validación es correcto o mensaje de error

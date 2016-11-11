@@ -7,17 +7,17 @@
             <column name="idrequest_loan_devices" />
             <generator class="identity" />
         </id>
-        <many-to-one name="device" class="com.ingweb.prestamoequipos.model.Device" fetch="select">
+        <many-to-one name="device" class="com.ingweb.prestamoequipos.model.Device" fetch="join" lazy="false">
             <column name="device_id" not-null="true">
                 <comment>Identificador para el equipo o dispositivo a prestar</comment>
             </column>
         </many-to-one>
-        <many-to-one name="usersByUserApproved" class="com.ingweb.prestamoequipos.model.User" fetch="select">
+        <many-to-one name="usersByUserApproved" class="com.ingweb.prestamoequipos.model.User" fetch="join" lazy="false">
             <column name="user_approved" length="250">
                 <comment>Usuario que aprueba o cancela el prestamo</comment>
             </column>
         </many-to-one>
-        <many-to-one name="usersByUserRequest" class="com.ingweb.prestamoequipos.model.User" fetch="select">
+        <many-to-one name="usersByUserRequest" class="com.ingweb.prestamoequipos.model.User" fetch="join" lazy="false">
             <column name="user_request" length="250" not-null="true">
                 <comment>Usuario que pide el prestamo</comment>
             </column>
